@@ -28,7 +28,7 @@ namespace EvolutionSimulator.BodyModels
 				return false;
 
 			Orientation cObj = (Orientation)obj;
-			return X == cObj.X && Y == cObj.Y;
+			return X == cObj.X && Y == cObj.Y && Direction == cObj.Direction;
 		}
 		public double DistanceTo(Orientation other)
 		{

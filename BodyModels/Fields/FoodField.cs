@@ -16,22 +16,23 @@ namespace EvolutionSimulator.BodyModels.Fields
             intensitySources = new List<IntensitySource>();
             FieldName = "food";
         }
-
         public double GetIntensityFromPosition(Orientation orientation)//получить интенсивность взаимодействия с позиции
         {
 
         }
-
         public void CreateIntensityIn(Orientation orientation)
         {
 
         }
-
         public void RemoveIntensityIn(Orientation orientation)
         {
 
         }
-
+        public void ChangeIntensityIn(Orientation orientation)
+        {
+            var src = intensitySources.Find(x => x.IntensityOrientation.Equals(orientation));
+            
+        }
         public void ClearField()
         {
 

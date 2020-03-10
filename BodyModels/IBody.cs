@@ -8,5 +8,8 @@ namespace EvolutionSimulator.BodyModels
 {
     interface IBody
     {
+        double Energy { get; }
+        double Health { get; }
+        Orientation Orientation { get; }
     }
 }

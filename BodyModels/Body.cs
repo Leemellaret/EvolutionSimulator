@@ -11,7 +11,7 @@ namespace EvolutionSimulator.BodyModels
 	{
 		private double energy;
 		private double[] data;
-		private Orientation location;
+		private Orientation orientation;
 		private List<IOrgan>[] sidesWithOrgans;
 	}
 }
