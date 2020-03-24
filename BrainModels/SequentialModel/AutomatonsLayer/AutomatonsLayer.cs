@@ -30,9 +30,9 @@ namespace EvolutionSimulator.BrainModels.SequentialModel.AutomatonsLayer
 			get => processedData;
 		}
 
-		public int LengthOfData
+		public uint LengthOfData
 		{
-			get => processedData.Length;
+			get => (uint)processedData.Length;
 		}
 
 		public void Process()

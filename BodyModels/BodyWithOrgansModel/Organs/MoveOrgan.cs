@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvolutionSimulator.BodyModels.Organs
+namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs
 {
 	class MoveOrgan : IOrgan
 	{
 		private int[] dataAddressees;
-		public Body Location { get; private set; }
+		public BodyWithOrgans Body { get; private set; }
 
 
 		public void MakeInteraction()

@@ -8,13 +8,18 @@ namespace EvolutionSimulator.BodyModels.Fields
 {
     class IntensitySource
     {
-        public Orientation IntensityOrientation { get; private set; }
-        public double IntensityValue { get; private set; }
+        public Orientation Orientation { get; private set; }
+        public double Value { get; private set; }
 
-        public IntensitySource(Orientation intensityOrientation, double intensityValue)
+        public IntensitySource(Orientation orientation, double value)
         {
-            IntensityOrientation = intensityOrientation;
-            IntensityValue = intensityValue;
+            if (orientation == null)
+                throw new ArgumentNullException("orientation");
+            if (value == 0)
+                throw new ArgumentException("Интенсивность взаимодействия не может быть равна 0", "value");
+
+            Orientation = orientation;
+            Value = value;
         }
     }
 }

@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvolutionSimulator.BodyModels.Fields;
+using EvolutionSimulator.BodyModels;
 
-namespace EvolutionSimulator.BodyModels.Organs
+namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs
 {
-	class FoodAbsorbingOrgan : IOrgan
+	class FieldSensorOrgan : IOrgan
 	{
 		private int[] dataAddressees;
-		public FoodField Field { get; private set; }
-		public Body Location { get; private set; }
+		//public Field Field { get; private set; }
+		public BodyWithOrgans Body { get; private set; }
 
 
 		public void MakeInteraction()
 		{
 			//принимает воздействия из среды и записыват в тело результат
-			//return 0;
 		}
 
 		public int[] DataAddressees { get => dataAddressees; }

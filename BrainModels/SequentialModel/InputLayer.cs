@@ -21,9 +21,9 @@ namespace EvolutionSimulator.BrainModels.SequentialModel
 			get => inputData;
 		}
 
-		public int LengthOfData
+		public uint LengthOfData
 		{
-			get => inputData.Length;
+			get => (uint)inputData.Length;
 		}
 
 		public void Process() { }

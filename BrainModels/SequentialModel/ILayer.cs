@@ -9,7 +9,7 @@ namespace EvolutionSimulator.BrainModels.SequentialModel
 	public interface ILayer
 	{
 		double[] Data { get; }
-		int LengthOfData { get; }
+		uint LengthOfData { get; }
 		void Process();
 	}
 }

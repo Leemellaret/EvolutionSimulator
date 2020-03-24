@@ -37,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\EvolutionSimulator-doc.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,18 +59,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BodyModels\Body.cs" />
+    <Compile Include="BodyModels\BodyWithOrgansModel\BodyWithOrgans.cs" />
     <Compile Include="BodyModels\Fields\FoodField.cs" />
     <Compile Include="BodyModels\Fields\IField.cs" />
     <Compile Include="BodyModels\Fields\IntensitySource.cs" />
     <Compile Include="BodyModels\IBody.cs" />
-    <Compile Include="BodyModels\Organs\FieldInteractorOrgan.cs" />
-    <Compile Include="BodyModels\Organs\FieldSensorOrgan.cs" />
-    <Compile Include="BodyModels\Organs\FoodAbsorbingOrgan.cs" />
-    <Compile Include="BodyModels\Organs\GripOrgan.cs" />
-    <Compile Include="BodyModels\Organs\IOrgan.cs" />
-    <Compile Include="BodyModels\Organs\MoveOrgan.cs" />
-    <Compile Include="BodyModels\Organs\SkinOrgan.cs" />
+    <Compile Include="BodyModels\BodyWithOrgansModel\Organs\FieldInteractorOrgan.cs" />
+    <Compile Include="BodyModels\BodyWithOrgansModel\Organs\FieldSensorOrgan.cs" />
+    <Compile Include="BodyModels\BodyWithOrgansModel\Organs\FoodAbsorbingOrgan.cs" />
+    <Compile Include="BodyModels\BodyWithOrgansModel\Organs\GripOrgan.cs" />
+    <Compile Include="BodyModels\BodyWithOrgansModel\Organs\IOrgan.cs" />
+    <Compile Include="BodyModels\BodyWithOrgansModel\Organs\MoveOrgan.cs" />
+    <Compile Include="BodyModels\Range.cs" />
+    <Compile Include="BodyModels\BodyWithOrgansModel\Organs\SkinOrgan.cs" />
     <Compile Include="BodyModels\Orientation.cs" />
     <Compile Include="BodyModels\WorldDirection.cs" />
     <Compile Include="BrainModels\Automaton\AutomatonException.cs" />
@@ -82,16 +84,23 @@
     <Compile Include="BrainModels\IBrain.cs" />
     <Compile Include="BrainModels\SequentialModel\AutomatonsLayer\AutomatonInLayer.cs" />
     <Compile Include="BrainModels\SequentialModel\AutomatonsLayer\AutomatonsLayer.cs" />
-    <Compile Include="BrainModels\SequentialModel\AutomatonsLayer\DataConverter.cs" />
+    <Compile Include="BrainModels\Automaton\DataConverter.cs" />
     <Compile Include="BrainModels\SequentialModel\DataRedirection.cs" />
     <Compile Include="BrainModels\SequentialModel\ILayer.cs" />
     <Compile Include="BrainModels\SequentialModel\InputLayer.cs" />
     <Compile Include="BrainModels\SequentialModel\OutputLayer.cs" />
     <Compile Include="BrainModels\SequentialModel\SequentialBrain.cs" />
+    <Compile Include="CreatureModels\Creature.cs" />
+    <Compile Include="CreatureModels\ICreature.cs" />
+    <Compile Include="EvolutionModels\IEvolution.cs" />
+    <Compile Include="EvolutionModels\IGenome.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealtimeSimulator.cs" />
     <Compile Include="Utils\Hash.cs" />
     <Compile Include="Utils\ShellsOfArray.cs" />
+    <Compile Include="WorldModels\IWorld.cs" />
+    <Compile Include="WorldModels\WorldWithFields.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -107,6 +116,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BrainModels\SingleAutomatonModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

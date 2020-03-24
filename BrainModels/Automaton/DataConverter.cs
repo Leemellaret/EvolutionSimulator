@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EvolutionSimulator.Utils;
 
-namespace EvolutionSimulator.BrainModels.SequentialModel.AutomatonsLayer
+namespace EvolutionSimulator.BrainModels.Automaton
 { // TODO Возможно придется сделать вместо results массив функций, которые будут вычислять выход конвертера
 	public class DataConverter<T, TResult>
 		where T : IComparable<T>

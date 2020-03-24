@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EvolutionSimulator.CreatureModels;
 
 namespace EvolutionSimulator.BrainModels.SequentialModel
 {
 	class SequentialBrain : IBrain
 	{
+		public ICreature Creature { get; private set; }
 		private ILayer[] layers;
 
 		public SequentialBrain(ILayer[] layers)
@@ -29,17 +31,22 @@ namespace EvolutionSimulator.BrainModels.SequentialModel
 			get => layers;
 		}
 
-		public int InputLength
+		public uint InputLength
 		{
 			get => layers.First().LengthOfData;
 		}
 
-		public double[] Output
+		public double[] Commands
 		{ 
 			get => layers.Last().Data; 
 		}
 
-		public int OutputLength
+		public double GetCommand(uint index)
+		{
+			return Commands[index];
+		}
+
+		public uint CommandsLength
 		{
 			get => layers.Last().LengthOfData;
 		}
