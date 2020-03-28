@@ -28,15 +28,15 @@ namespace EvolutionSimulator.BrainModels.Automaton
 		{
 
 			if (!SymbolTypeUtils.IsComplyWith(defaultOutput.IOSymbols.Symbols, outputSymbolTypes) && states.Contains(defaultOutput.State))
-				throw new AutomatonException("Default output does not comply with inputSymbolTypes or/and states");
+				throw new ArgumentException("Дефолтный вывод не удовлетворяет выводным типам и/или состояние, в которое должен перейти автомат, когда дает этот вывод не является допустимым состоянием для него", "defaultOutput");
 
 			if (!states.Contains(initialState))
-				throw new AutomatonException("initial state is not correct");
+				throw new ArgumentException("Инициальное состояние автомата не является допустимым состоянием для автомата.", "initialState");
 
 			foreach (var key in automatonTable.Keys)
 			{
 				if (!SymbolTypeUtils.IsComplyWith(key.IOSymbols.Symbols, inputSymbolTypes) || !SymbolTypeUtils.IsComplyWith(automatonTable[key].IOSymbols.Symbols, outputSymbolTypes))
-					throw new AutomatonException("Automaton table is not correct");
+					throw new ArgumentException("Таблица автомата не допустима.");
 			}
 
 

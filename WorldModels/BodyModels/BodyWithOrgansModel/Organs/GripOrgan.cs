@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvolutionSimulator.BodyModels;
+using EvolutionSimulator.WorldModels.BodyModels;
 
-namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs
+namespace EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel.Organs
 {
-	class GripOrgan : IOrgan
+	class GripOrgan// : IOrgan
 	{
 		private int[] dataAddressees;
 		public BodyWithOrgans Body { get; private set; }

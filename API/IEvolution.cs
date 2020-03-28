@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvolutionSimulator.EvolutionModels
+namespace EvolutionSimulator.API
 {
-    public interface IGenome
+    public interface IEvolution
     {
     }
 }

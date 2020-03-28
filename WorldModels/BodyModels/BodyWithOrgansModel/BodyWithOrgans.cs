@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs;
+using EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel.Organs;
 using EvolutionSimulator.CreatureModels;
-using EvolutionSimulator.WorldModels;
+using EvolutionSimulator.API;
 
-namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel
+namespace EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel
 {
 	public class BodyWithOrgans : IBody
 	{
@@ -21,7 +21,10 @@ namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel
 
 		public void InteractWithWorld()
 		{
-
+			foreach(IOrgan organ in organs)
+			{
+				organ.MakeInteraction();
+			}
 		}
 
 		public List<IOrgan> Organs { get => organs; }

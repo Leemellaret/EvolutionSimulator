@@ -3,20 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvolutionSimulator.BodyModels;
 
-namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs
+namespace EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel.Organs
 {
-	class FieldSensorOrgan : IOrgan
+	class SkinOrgan// : IOrgan
 	{
 		private int[] dataAddressees;
-		//public Field Field { get; private set; }
 		public BodyWithOrgans Body { get; private set; }
 
 
 		public void MakeInteraction()
 		{
-			//принимает воздействия из среды и записыват в тело результат
+			
 		}
 
 		public int[] DataAddressees { get => dataAddressees; }

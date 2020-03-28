@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EvolutionSimulator.CreatureModels;
 
-namespace EvolutionSimulator.BrainModels
+namespace EvolutionSimulator.API
 {
     public interface IBrain
     {

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvolutionSimulator.BodyModels;
+using EvolutionSimulator.API;
 
-namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs
+namespace EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel.Organs
 {
 	public interface IOrgan
 	{
-		/*/// <summary>
+		/// <summary>
 		/// Тело, где этот орган расположен.
 		/// </summary>
 		IBody Body { get; }
@@ -33,6 +33,6 @@ namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs
 		/// <summary>
 		/// Произвести взаимодействие со средой.
 		/// </summary>
-		void MakeInteraction();*/
+		void MakeInteraction();
 	}
 }

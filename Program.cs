@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EvolutionSimulator.CreatureModels;
-using EvolutionSimulator.BrainModels;
-using EvolutionSimulator.BodyModels;
-using EvolutionSimulator.BodyModels.BodyWithOrgansModel;
+using EvolutionSimulator.API;
 
 namespace EvolutionSimulator
 {

@@ -21,11 +21,11 @@ namespace EvolutionSimulator.BrainModels.SequentialModel.AutomatonsLayer
 								DataConverter<int, double>[] convertersAOutputToData)
 		{
 			if (automaton.InputLength != toInputRedirections.Length)
-				throw new AutomatonException("Length of toInputRedirection does not equal to length of automaton input");
+				throw new ArgumentException("Количество перенаправлений от источников данных ко входам автомата не совпадает с количеством входов автомата.", "toInputRedirections");
 			if (automaton.InputLength != convertersDataToAInput.Length)
-				throw new AutomatonException("Length of convertersDataToAInput does not equal to length of automaton input");
+				throw new ArgumentException("Количество преобразователей данных перед входами автомата не совпадает с количеством входов автомата.", "convertersDataToAInput");
 			if (automaton.OutputLength != convertersAOutputToData.Length)
-				throw new AutomatonException("Length of convertersAOutputToData does not equal to length of automaton output");
+				throw new ArgumentException("Количество преобразователей данных после выходов автомата не совпадает с количеством выходов автомата.", "convertersAOutputToData");
 
 			this.automaton = automaton;
 			this.toInputRedirections = toInputRedirections;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvolutionSimulator.BodyModels
+namespace EvolutionSimulator.WorldModels.BodyModels
 {
     public class Range
     {
@@ -19,5 +19,7 @@ namespace EvolutionSimulator.BodyModels
             Begin = begin;
             End = end;
         }
+
+        public uint Length { get => End - Begin + 1; }
     }
 }

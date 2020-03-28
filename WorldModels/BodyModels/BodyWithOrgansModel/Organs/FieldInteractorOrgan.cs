@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvolutionSimulator.BodyModels.BodyWithOrgansModel;
+using EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel;
 
-namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs
+namespace EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel.Organs
 {
-	class FieldInteractorOrgan : IOrgan
+	class FieldInteractorOrgan //: IOrgan
 	{
 		//public Field Field { get; private set; }
 		private int[] dataAddressees;

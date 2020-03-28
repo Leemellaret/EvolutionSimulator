@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs
+namespace EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel.Organs
 {
-	class MoveOrgan : IOrgan
+	class MoveOrgan// : IOrgan
 	{
 		private int[] dataAddressees;
 		public BodyWithOrgans Body { get; private set; }

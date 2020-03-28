@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvolutionSimulator.BodyModels.Fields;
-using EvolutionSimulator.BodyModels;
+using EvolutionSimulator.WorldModels.Fields;
+using EvolutionSimulator.API;
 
-namespace EvolutionSimulator.BodyModels.BodyWithOrgansModel.Organs
+namespace EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel.Organs
 {
 	class FoodAbsorbingOrgan : IOrgan
 	{

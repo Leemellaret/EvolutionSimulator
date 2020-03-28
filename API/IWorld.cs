@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvolutionSimulator.BodyModels;
+using EvolutionSimulator.WorldModels.BodyModels;
 
-namespace EvolutionSimulator.WorldModels
+namespace EvolutionSimulator.API
 {
     public interface IWorld
     {

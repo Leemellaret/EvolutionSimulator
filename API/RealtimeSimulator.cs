@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using EvolutionSimulator.WorldModels;
 using EvolutionSimulator.CreatureModels;
-using EvolutionSimulator.EvolutionModels;
+using EvolutionSimulator.API;
 
-namespace EvolutionSimulator
+namespace EvolutionSimulator.API
 {
     public class RealtimeSimulator
     {

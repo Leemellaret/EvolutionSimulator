@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EvolutionSimulator.BrainModels;
-using EvolutionSimulator.BodyModels;
-using EvolutionSimulator.EvolutionModels;
+using EvolutionSimulator.API;
+using EvolutionSimulator.API;
 
 
 namespace EvolutionSimulator.CreatureModels
@@ -28,7 +28,8 @@ namespace EvolutionSimulator.CreatureModels
 
         public void Interact()
         {
-
+            Brain.Process(Body.Data);
+            Body.InteractWithWorld();
         }
     }
 }

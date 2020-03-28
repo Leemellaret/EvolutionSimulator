@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EvolutionSimulator.CreatureModels;
+using EvolutionSimulator.API;
 
 namespace EvolutionSimulator.BrainModels.SequentialModel
 {

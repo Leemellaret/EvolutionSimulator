@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EvolutionSimulator.API;
 
-namespace EvolutionSimulator.BodyModels.Fields
+namespace EvolutionSimulator.WorldModels.Fields
 {
     public class FoodField : IField
     {

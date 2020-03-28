@@ -16,7 +16,7 @@ namespace EvolutionSimulator.BrainModels.Automaton
 		{
 			if (intervalBegin > intervalEnd)
 			{
-				throw new AutomatonException("error: intervalBegin > intervalEnd");
+				throw new ArgumentException("Конец отрезка меньше его начала.", "intervalEnd");
 			}
 
 			this.intervalBegin = intervalBegin;
