@@ -9,10 +9,10 @@ namespace EvolutionSimulator.WorldModels.Fields
 {
     class IntensitySource
     {
-        public Orientation Orientation { get; private set; }
+        public BodyOrientation Orientation { get; private set; }
         public double Value { get; private set; }
 
-        public IntensitySource(Orientation orientation, double value)
+        public IntensitySource(BodyOrientation orientation, double value)
         {
             if (orientation == null)
                 throw new ArgumentNullException("orientation");

@@ -36,4 +36,6 @@ namespace EvolutionSimulator.API
         /// </summary>
         all
     }
+
+    interface i1 { }
 }

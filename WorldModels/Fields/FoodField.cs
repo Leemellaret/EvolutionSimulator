@@ -24,7 +24,7 @@ namespace EvolutionSimulator.WorldModels.Fields
             this.worldSizeY = worldSizeY;
             FieldName = "food";
         }
-        public double GetIntensityFromPosition(Orientation orientation, uint sensitivity)
+        public double GetIntensityFromPosition(BodyOrientation orientation, uint sensitivity)
         {
             if (orientation == null)
                 throw new ArgumentNullException("orientation");
@@ -68,7 +68,7 @@ namespace EvolutionSimulator.WorldModels.Fields
             return intensitySum;
         }
 
-        public double GetIntensityIn(Orientation orientation)
+        public double GetIntensityIn(BodyOrientation orientation)
         {
             if (orientation == null)
                 throw new ArgumentNullException("orientation");
@@ -77,7 +77,7 @@ namespace EvolutionSimulator.WorldModels.Fields
 
             return intensitySources[orientation.X, orientation.Y, (int)orientation.Direction];
         }
-        public void CreateIntensityIn(Orientation orientation, double value)
+        public void CreateIntensityIn(BodyOrientation orientation, double value)
         {
             if (orientation == null)
                 throw new ArgumentNullException("orientation");
@@ -89,7 +89,7 @@ namespace EvolutionSimulator.WorldModels.Fields
 
             intensitySources[orientation.X, orientation.Y, (int)orientation.Direction] = value;
         }
-        public void RemoveIntensityIn(Orientation orientation)
+        public void RemoveIntensityIn(BodyOrientation orientation)
         {
             if (orientation == null)
                 throw new ArgumentNullException("orientation");
@@ -98,7 +98,7 @@ namespace EvolutionSimulator.WorldModels.Fields
 
             intensitySources[orientation.X, orientation.Y, (int)orientation.Direction] = 0;
         }
-        public void ChangeIntensityIn(Orientation orientation, double dValue)
+        public void ChangeIntensityIn(BodyOrientation orientation, double dValue)
         {
             if (orientation == null)
                 throw new ArgumentNullException("orientation");

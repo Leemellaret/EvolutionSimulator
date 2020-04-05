@@ -9,16 +9,11 @@ namespace EvolutionSimulator.API
 {
     public interface IBrain
     {
-        /// <summary>
-        /// Существо, у которого этот мозг.
-        /// </summary>
-        ICreature Creature { get; }
-
+        string Id { get;}
         /// <summary>
         /// Метод обработки входные данные мозгом. В результате выполнения массив Commands обновится.
         /// </summary>
-        /// <param name="input">Входные данные, которые нужно обработать.</param>
-        void Process(double[] input);
+        void Process(double[] data);
 
         /// <summary>
         /// Количество входов для входных данных этого мозга. 

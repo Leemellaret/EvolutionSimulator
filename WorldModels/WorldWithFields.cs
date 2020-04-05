@@ -14,5 +14,27 @@ namespace EvolutionSimulator.WorldModels
         public List<IField> Fields { get; private set; }
         public List<IBody> Bodies { get; private set; }
 
+        public uint SizeX { get; private set; }
+        public uint SizeY { get; private set; }
+
+
+        public void AddBody(IBody body)
+        {
+
+        }
+        public void RemoveBody(IBody body)
+        {
+
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public void PrepareForNewGeneration()
+        {
+
+        }
     }
 }

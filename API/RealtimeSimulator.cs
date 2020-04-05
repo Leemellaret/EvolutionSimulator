@@ -30,9 +30,12 @@ namespace EvolutionSimulator.API
             foreach(var creature in creatures)
             {
                 creature.Interact();
+                if (!World.Bodies.Contains(creature.Body))//Если мир не содержит тело этого существа, значит оно умерло
+                {
+                    Creatures.Remove(creature);
+                }
             }
         }
-
 
         public List<ICreature> Creatures { get => creatures; }
     }

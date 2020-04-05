@@ -12,6 +12,11 @@ namespace EvolutionSimulator.CreatureModels
 {
     public class Creature : ICreature
     {
+        public string Id
+        {
+            get;
+            set;
+        }
         public IBrain Brain { get; private set; }
         public IBody Body { get; private set; }
 
@@ -29,7 +34,7 @@ namespace EvolutionSimulator.CreatureModels
         public void Interact()
         {
             Brain.Process(Body.Data);
-            Body.InteractWithWorld();
+            Body.InteractWithWorld(Brain.Commands);
         }
     }
 }

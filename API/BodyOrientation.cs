@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace EvolutionSimulator.API
 {
-	public class Orientation
+	public class BodyOrientation
 	{
 		public uint X { get; private set; }
 		public uint Y { get; private set; }
 		public WorldDirection Direction { get; private set; }
 
-		public Orientation(uint x, uint y, WorldDirection direction)
+		public BodyOrientation(uint x, uint y, WorldDirection direction)
 		{
 			X = x;
 			Y = y;
+			Direction = direction;
 		}
 
 		public override bool Equals(object obj)
@@ -27,16 +28,16 @@ namespace EvolutionSimulator.API
 			if (!GetType().Equals(obj.GetType()))
 				return false;
 
-			Orientation cObj = (Orientation)obj;
+			BodyOrientation cObj = (BodyOrientation)obj;
 			return X == cObj.X && Y == cObj.Y && Direction == cObj.Direction;
 		}
-		public double DistanceTo(Orientation other)
+		public double DistanceTo(BodyOrientation other)
 		{
 			return Math.Sqrt(Math.Pow(X - other.X, 2) + Math.Pow(Y - other.Y, 2));
 		}
-		public Orientation MovePoint(uint dx, uint dy)
+		public BodyOrientation MovePoint(uint dx, uint dy)
 		{
-			return new Orientation(X + dx, Y + dy, Direction);
+			return new BodyOrientation(X + dx, Y + dy, Direction);
 		}
 
 		/// <summary>
@@ -46,7 +47,7 @@ namespace EvolutionSimulator.API
 																				   { WorldDirection.east, WorldDirection.north, WorldDirection.west, WorldDirection.south },
 																				   { WorldDirection.south, WorldDirection.east, WorldDirection.north, WorldDirection.west },
 																				   { WorldDirection.west, WorldDirection.south, WorldDirection.east, WorldDirection.north } };
-		public Orientation RotateDirection(int value)
+		public BodyOrientation RotateDirection(int value)
 		{
 			// 0 - не менять
 			//<0 - повернуть против часовой
@@ -56,7 +57,7 @@ namespace EvolutionSimulator.API
 				value += 4;
 			}
 			value %= 4;
-			return new Orientation(X, Y, rotationResults[(int)Direction, value]);
+			return new BodyOrientation(X, Y, rotationResults[(int)Direction, value]);
 		}
 	}
 }

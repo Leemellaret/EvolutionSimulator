@@ -39,10 +39,10 @@ namespace EvolutionSimulator.WorldModels.BodyModels.BodyWithOrgansModel.Organs
 
 		public void MakeInteraction()
 		{
-			double absorbVal = Body.Creature.Brain.GetCommand(0);
+			double absorbVal = 0;// Body.Creature.Brain.GetCommand(0);
 			if (absorbVal > 0)
 			{
-				var orientRelToThis = new Orientation(Body.Orientation.X, Body.Orientation.Y, BodySide);
+				var orientRelToThis = new BodyOrientation(Body.Orientation.X, Body.Orientation.Y, BodySide);
 				var dir = orientRelToThis.RotateDirection((int)Body.Orientation.Direction);
 
 				double intensInCell = Field.GetIntensityIn(dir);

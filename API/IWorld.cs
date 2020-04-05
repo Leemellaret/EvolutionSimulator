@@ -13,5 +13,22 @@ namespace EvolutionSimulator.API
         /// Тела, которые находятся и живут в этом мире.
         /// </summary>
         List<IBody> Bodies { get; }
+
+        /// <summary>
+        /// не включительно
+        /// </summary>
+        uint SizeX { get; }
+        /// <summary>
+        /// не включительно
+        /// </summary>
+        uint SizeY { get; }
+
+        void AddBody(IBody body);
+        void RemoveBody(IBody body);
+        /// <summary>
+        /// Например создать еду.
+        /// </summary>
+        void Update();
+        void PrepareForNewGeneration();
     }
 }

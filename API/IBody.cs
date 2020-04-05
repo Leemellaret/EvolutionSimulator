@@ -11,15 +11,11 @@ namespace EvolutionSimulator.API
 {
     public interface IBody
     {
+        string Id { get; }
         /// <summary>
         /// Физический мир, где это тело находится.
         /// </summary>
         IWorld World { get; }
-
-        /// <summary>
-        /// Существо, у которого это тело.
-        /// </summary>
-        ICreature Creature { get; }
 
         /// <summary>
         /// Количество энергии у этого тела.
@@ -29,7 +25,7 @@ namespace EvolutionSimulator.API
         /// <summary>
         /// Позиция этого тела в мире.
         /// </summary>
-        Orientation Orientation { get; }
+        BodyOrientation Orientation { get; }
 
         /// <summary>
         /// Информация, которую тело получило от взаимодействия с миром.
@@ -39,6 +35,11 @@ namespace EvolutionSimulator.API
         /// <summary>
         /// Сделать взаимодействие с миром.
         /// </summary>
-        void InteractWithWorld();
+        void InteractWithWorld(double[] commands);
+
+        /// <summary>
+        /// Совершает все необходимые изменения в программе, чтобы существо считалось мертвым
+        /// </summary>
+        void Die();
     }
 }

@@ -8,5 +8,7 @@ namespace EvolutionSimulator.API
 {
     public interface IEvolution
     {
+        List<ICreature> MakeProgeny(List<ICreature> creatures);
+        List<ICreature> MakeFirstPopulation(uint countOfCreatures);
     }
 }

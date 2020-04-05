@@ -11,6 +11,7 @@ namespace EvolutionSimulator.API
 {
     public interface ICreature
     {
+        string Id { get; set; }
         IBody Body { get; }
         IBrain Brain { get; }
         IGenome GetGenome();

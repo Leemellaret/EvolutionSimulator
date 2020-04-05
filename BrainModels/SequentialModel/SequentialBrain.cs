@@ -10,7 +10,7 @@ namespace EvolutionSimulator.BrainModels.SequentialModel
 {
 	class SequentialBrain : IBrain
 	{
-		public ICreature Creature { get; private set; }
+		public string Id { get; }
 		private ILayer[] layers;
 
 		public SequentialBrain(ILayer[] layers)
