@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace EvolutionSimulator.API
 {
-    public interface IBrain
+    public interface IWorldData
     {
-        IBrainCommands Process(IBrainInput data);
     }
 }

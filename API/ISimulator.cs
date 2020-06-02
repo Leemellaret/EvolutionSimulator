@@ -8,10 +8,9 @@ namespace EvolutionSimulator.API
 {
     public interface ISimulator
     {
-        List<ICreature> Creatures { get; }
         IWorld World { get; }
-        bool IsSelectionTime { get; }
         IEvolution Evolution { get; }
+        bool IsSelectionTime { get; }
         void MakeOneTick();
         void MakeSelection();
     }

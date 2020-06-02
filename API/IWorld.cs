@@ -3,32 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvolutionSimulator.WorldModels.BodyModels;
 
 namespace EvolutionSimulator.API
 {
     public interface IWorld
     {
+        IEvolution Evolution { get; }
         /// <summary>
-        /// Тела, которые находятся и живут в этом мире.
+        /// Существа, которые находятся и живут в этом мире.
         /// </summary>
-        List<IBody> Bodies { get; }
+        List<ICreature> Creatures { get; }
 
         /// <summary>
-        /// не включительно
+        /// Добавить существо в мир. Его Id должен быть уникальным.
         /// </summary>
-        uint SizeX { get; }
+        /// <param name="creature">Существо, которое нужно добавить.</param>
+        /// <param name="orientation">Позиуия существа в мире.</param>
+        void AddCreature(ICreature creature, IOrientation orientation);
+        
         /// <summary>
-        /// не включительно
+        /// Удалить существо из мира.
         /// </summary>
-        uint SizeY { get; }
+        /// <param name="creature">Существо, которое нужно удалить.</param>
+        void RemoveCreature(int creatureIndex);
 
-        void AddBody(IBody body);
-        void RemoveBody(IBody body);
-        /// <summary>
-        /// Например создать еду.
-        /// </summary>
-        void Update();
-        void PrepareForNewGeneration();
+        void MakeInteractions();
     }
 }
