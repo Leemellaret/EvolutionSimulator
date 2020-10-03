@@ -6,8 +6,7 @@ using System.Drawing;
 using EvolutionSimulator.Run;
 using System.Text.Json;
 using System.IO;
-
-
+using System.Drawing.Text;
 
 namespace EvolutionSimulator
 {
@@ -15,13 +14,14 @@ namespace EvolutionSimulator
     {
         static void Main(string[] args)
         {
-            Logger.OpenLogFile(@"d:\1.ES\1.txt");
+            Logger.OpenLogFile(@"e:\ES\1.txt");
 
             int wSizeX = 100, wSizeY = 100;
             Cell[,] cells = new Cell[wSizeX, wSizeY];
-            Random r = new Random();
-            int foodIncrease = 20;
+            int countOfWorldSteps = 100;
+            int foodIncrease = 14;
             int initFoodCount = foodIncrease * 50;
+
             for (int i = 0; i < wSizeX; i++)
             {
                 for (int j = 0; j < wSizeY; j++)
@@ -62,22 +62,29 @@ namespace EvolutionSimulator
             //Logger.Log("");
             #endregion
 
-            int countOfWorldSteps = 3000;
-            string[] chartAreaNames = new string[] { "All Food", "Absorbtion of food", "Creature populations", "Death info", "Uniformity of distribution" };
-            List<SeriesSettings> series = new List<SeriesSettings>() {
+            string[] chartAreaNames = new string[] 
+            {
+                "All Food", 
+                "Absorbtion of food", 
+                "Creature populations"
+                /*, "Death info", "Uniformity of distribution" */
+            };
+            List<SeriesSettings> series = new List<SeriesSettings>() 
+            {
                 new SeriesSettings("All food", chartAreaNames[0], Color.Brown, countOfWorldSteps),
                 new SeriesSettings("Total absorbtion of food", chartAreaNames[1], Color.Blue, countOfWorldSteps),
                 new SeriesSettings($"Population of {(int)evolution.Alphas[0]}-Alpha", chartAreaNames[2], Color.Red, countOfWorldSteps),
-                new SeriesSettings($"Population of {(int)evolution.Alphas[1]}-Alpha", chartAreaNames[2], Color.Green, countOfWorldSteps),
+                new SeriesSettings($"Population of {(int)evolution.Alphas[1]}-Alpha", chartAreaNames[2], Color.Green, countOfWorldSteps)/*,
                 new SeriesSettings("Deaths in fight", chartAreaNames[3], Color.DarkRed, countOfWorldSteps),
                 new SeriesSettings("Deaths from starvation", chartAreaNames[3], Color.DarkGray, countOfWorldSteps),
-                new SeriesSettings("Uniformity", chartAreaNames[4], Color.DarkGoldenrod, countOfWorldSteps)
-                };
+                new SeriesSettings("Uniformity", chartAreaNames[4], Color.DarkGoldenrod, countOfWorldSteps)*/
+            };
+
             for (int i = 1; i <= countOfWorldSteps; i++)
             {
                 AddData(world, series);
                 //Console.WriteLine($"{i} TF={totalFood:.00} TAoF={totalFoodConsumption:.00} S{(int)evolution.Alphas[0]}C={alpha0:0000} S{(int)evolution.Alphas[1]}C={alpha1:0000}");
-                Console.WriteLine(i);
+                //Console.WriteLine(i);
 
                 // alpha2Count={alpha2:0000} alpha8Count={alpha8:0000} Count of: Eat={world.CountOfActions[(int)CreatureAction.Eat]} Go={world.CountOfActions[(int)CreatureAction.Go]} Hit={world.CountOfActions[(int)CreatureAction.Hit]} Repr={world.CountOfActions[(int)CreatureAction.Reproduce]}
                 //Logger.Log($"World step={i:0000000}");
@@ -85,7 +92,7 @@ namespace EvolutionSimulator
             }
             AddData(world, series);
             //Logger.Log($"Count of: Eat={world.CountOfActions[(int)CreatureAction.Eat]} Go={world.CountOfActions[(int)CreatureAction.Go]} Hit={world.CountOfActions[(int)CreatureAction.Hit]} Repr={world.CountOfActions[(int)CreatureAction.Reproduce]}");
-            //File.WriteAllText($"d:\\1.es\\results of foodIncrease {foodIncrease}.txt", JsonSerializer.Serialize(series));
+            File.WriteAllText($"e:\\es\\results of foodIncrease {foodIncrease}.txt", JsonSerializer.Serialize(series));
             Console.WriteLine($"food increase = {foodIncrease} done.");
 
             ChartForm chartForm = new ChartForm(chartAreaNames, series);
@@ -104,9 +111,9 @@ namespace EvolutionSimulator
             series[1].AddPoint(totalFoodConsumption);
             series[2].AddPoint(alpha0);
             series[3].AddPoint(alpha1);
-            series[4].AddPoint(World.Deaths[0]);
+            /*series[4].AddPoint(World.Deaths[0]);
             series[5].AddPoint(World.Deaths[1]);
-            series[6].AddPoint(world.UniformityOfDistribution());
+            series[6].AddPoint(world.UniformityOfDistribution());*/
         }
     }
 

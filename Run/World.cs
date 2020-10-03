@@ -19,6 +19,7 @@ namespace EvolutionSimulator.Run
             SizeY = cells.GetLength(1);
 
             CountOfActions = new uint[4];
+            World.Deaths = new uint[2];
         }
 
         public void AddCreatures(params (Creature, Orientation)[] creatures)
@@ -110,7 +111,7 @@ namespace EvolutionSimulator.Run
         }
 
         public uint[] CountOfActions { get; private set; }
-        public static uint[] Deaths { get; } = new uint[2];
+        public static uint[] Deaths { get; set; } = new uint[2];
         public double TotalFood
         {
             get
